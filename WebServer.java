@@ -58,7 +58,9 @@ public class WebServer {
     }
 
     private String footer() {
-        return "</div></body></html>";
+        return "<div style='text-align:center; margin-top:30px; font-size:0.85rem; color:#64748b; border-top:1px solid #cbd5e1; padding-top:10px;'>"
+             + "<b>Project Team:</b> Lakshay [AP24110010677] (Team Lead) &bull; Md Ahab Firoz [AP24110011219]"
+             + "</div></div></body></html>";
     }
 
     private String pageHome() {

@@ -4,6 +4,12 @@ This folder gives you **1-click shortcuts** and simple steps to run the EduPulse
 
 ---
 
+## 👥 Project Team Details
+- **Team Lead:** Lakshay (`AP24110010677`)
+- **Team Member:** Md Ahab Firoz (`AP24110011219`)
+
+---
+
 ## 🔗 Direct 1-Click Browser Link
 Once the Java server is started, you can click this direct link anytime to open the website:
 

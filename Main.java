@@ -2,7 +2,11 @@ package elearning;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== EduPulse E-Learning System ===");
+        System.out.println("=================================================");
+        System.out.println("   EduPulse: E-Learning Course & Quiz Platform   ");
+        System.out.println("   Team Lead: Lakshay (AP24110010677)            ");
+        System.out.println("   Team Member: Md Ahab Firoz (AP24110011219)    ");
+        System.out.println("=================================================");
 
         PlatformManager pm = new PlatformManager();
 

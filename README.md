@@ -6,6 +6,15 @@ Includes an interactive local web application with dynamic course listings, a li
 
 ---
 
+## 👥 Project Team Details
+
+| Role | Name | Roll Number |
+| :--- | :--- | :--- |
+| **Team Lead** | **Lakshay** | `AP24110010677` |
+| **Team Member** | **Md Ahab Firoz** | `AP24110011219` |
+
+---
+
 ## 📑 Syllabus Mapping (Units 1 to 4)
 
 | Unit | Core Topics Implemented | Source Code Reference |
