@@ -1,43 +1,29 @@
 package elearning;
 
-import java.util.ArrayList; // Unit 4: Collections (ArrayList)
+import java.util.ArrayList; // Unit 4: Collection Classes (ArrayList)
 
-// Quiz extends LearningItem (Unit 1: Inheritance)
+// Unit 1: Multilevel / Class Hierarchy
 public class Quiz extends LearningItem {
-    private ArrayList<Question> questions; // Unit 4: Collections Overview, ArrayList
-    private int timeLimitSeconds;
+    ArrayList<Question> questions = new ArrayList<>(); // Unit 4: ArrayList
+    int timeLimit;
 
-    public Quiz(int id, String title, String category, int timeLimitSeconds) {
-        super(id, title, category);
-        this.timeLimitSeconds = timeLimitSeconds;
-        this.questions = new ArrayList<>();
+    public Quiz(int id, String title, int timeLimit) {
+        super(id, title);
+        this.timeLimit = timeLimit;
     }
 
     public void addQuestion(Question q) {
-        this.questions.add(q);
+        questions.add(q);
     }
 
-    public ArrayList<Question> getQuestions() {
-        return questions;
-    }
-
-    public int getTimeLimitSeconds() {
-        return timeLimitSeconds;
-    }
-
-    // Dynamic Method Dispatch / Overriding (Unit 2)
+    // Unit 2: Method Overriding
     @Override
     public String getSummary() {
-        return "Quiz #" + id + ": " + title + " (" + questions.size() + " Questions, Time: " + timeLimitSeconds + "s)";
+        return "Quiz #" + id + ": " + title + " (" + questions.size() + " Qs, " + timeLimit + "s)";
     }
 
     @Override
     public void showDetails() {
-        System.out.println("=== Quiz Information ===");
-        System.out.println("ID: " + id);
-        System.out.println("Title: " + title);
-        System.out.println("Category: " + category);
-        System.out.println("Questions Count: " + questions.size());
-        System.out.println("Time Limit: " + timeLimitSeconds + " seconds");
+        System.out.println(getSummary());
     }
 }

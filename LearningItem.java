@@ -1,35 +1,26 @@
 package elearning;
 
-// Abstract Class (Unit 1: Abstract Class, final keyword, this reference)
+// Unit 1: Abstract Class, final keyword, this keyword, static keyword
 public abstract class LearningItem implements Displayable {
     protected int id;
     protected String title;
-    protected String category;
+    public static int count = 0; // Unit 1: static variable
 
-    // Static counter (Unit 1: static keyword)
-    public static int totalItemsCreated = 0;
-
-    // Constructor (Unit 1: Constructor, this reference)
-    public LearningItem(int id, String title, String category) {
-        this.id = id;
+    public LearningItem(int id, String title) {
+        this.id = id;       // Unit 1: this keyword
         this.title = title;
-        this.category = category;
-        totalItemsCreated++;
+        count++;
     }
 
-    // Abstract method to be overridden by subclasses (Unit 2: Runtime polymorphism / Dynamic Method Dispatch)
+    // Unit 2: Abstract method for Dynamic Method Dispatch
     public abstract String getSummary();
 
-    // Final method (Unit 1: using final with inheritance)
+    // Unit 1: final method (cannot be overridden)
     public final int getId() {
-        return this.id;
+        return id;
     }
 
     public String getTitle() {
-        return this.title;
-    }
-
-    public String getCategory() {
-        return this.category;
+        return title;
     }
 }

@@ -1,38 +1,27 @@
 package elearning;
 
-// QuizTimerThread implements Runnable (Unit 3: Multithreading - Runnable interface, Thread life cycle, sleep)
+// Unit 3: Multithreading - Runnable interface, Thread life cycle, sleep, synchronization
 public class QuizTimerThread implements Runnable {
-    private int remainingSeconds;
-    private volatile boolean isRunning = true;
-    private final Object lock = new Object(); // Unit 3: Synchronizing threads
+    private int seconds;
+    private boolean active = true;
 
-    public QuizTimerThread(int durationSeconds) {
-        this.remainingSeconds = durationSeconds;
+    public QuizTimerThread(int seconds) {
+        this.seconds = seconds;
     }
 
-    public void stopTimer() {
-        synchronized (lock) {
-            this.isRunning = false;
-        }
-    }
-
-    public int getRemainingSeconds() {
-        return remainingSeconds;
+    public synchronized void stop() { // Unit 3: Synchronizing
+        active = false;
     }
 
     @Override
     public void run() {
         try {
-            while (remainingSeconds > 0) {
-                synchronized (lock) {
-                    if (!isRunning) break;
-                }
-                Thread.sleep(1000); // 1 second tick
-                remainingSeconds--;
+            while (seconds > 0 && active) {
+                Thread.sleep(1000); // Unit 3: Thread sleep
+                seconds--;
             }
         } catch (InterruptedException e) {
-            // Thread interrupted on quiz completion
-            System.out.println("[Timer thread finished/interrupted]");
+            System.out.println("Timer interrupted");
         }
     }
 }

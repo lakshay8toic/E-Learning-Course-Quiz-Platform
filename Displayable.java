@@ -1,6 +1,6 @@
 package elearning;
 
-// Interface (Unit 1: Interface)
-interface Displayable {
-    void showDetails(); // Abstract method
+// Unit 1: Interface
+public interface Displayable {
+    void showDetails();
 }
